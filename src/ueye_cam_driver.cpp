@@ -536,7 +536,7 @@ INT UEyeCamDriver::setGain(bool& auto_gain, INT& master_gain_prc, INT& red_gain_
 
     // Set manual gain parameters
     if ((is_err = is_SetHardwareGain(cam_handle_, master_gain_prc,
-        red_gain_prc, green_gain_prc, blue_gain_prc)) != IS_SUCCESS) {
+        IS_IGNORE_PARAMETER, IS_IGNORE_PARAMETER, IS_IGNORE_PARAMETER)) != IS_SUCCESS) {
       WARN_STREAM("Failed to set manual gains (master: " << master_gain_prc <<
           "; red: " << red_gain_prc << "; green: " << green_gain_prc <<
           "; blue: " << blue_gain_prc << ") for [" << cam_name_ << "] (" <<
